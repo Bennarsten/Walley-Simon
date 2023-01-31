@@ -23,8 +23,6 @@ public class TollCalculator
         MyTimer timer = new MyTimer(dates[0]);
 
         foreach (DateTime date in dates.Skip(1)) {
-            Console.WriteLine("");
-            Console.WriteLine("date: " +date.ToString());
 
             timer.Current(date);
             nextFee = GetTollFee(date, vehicle);
@@ -39,10 +37,6 @@ public class TollCalculator
                 totalFee += nextFee;
                 HourHighestFee = nextFee;
             }
-
-            Console.WriteLine("NextFee: " + nextFee);
-            Console.WriteLine("HourHighest: "+ HourHighestFee);
-            Console.WriteLine("total fee: " + totalFee);
         }
         if (totalFee > 60) totalFee = 60;
 
